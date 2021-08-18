@@ -8,6 +8,10 @@ jobs:
     # container: docker://ghcr.io/iterative/cml:0-dvc2-base1-gpu
     steps:
       - uses: actions/checkout@v2
+      - name: cml_run
+        env:
+           repo_taken: ${{ secrets.GITHUB_TOKEN }}
+      
       # may need to setup NodeJS & Python3 on e.g. self-hosted
       # - uses: actions/setup-node@v2
       #   with:
